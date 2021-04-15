@@ -1,4 +1,4 @@
-package com.estudoapi.MarsRoverApi;
+package com.estudoapi.MarsRoverApi.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
