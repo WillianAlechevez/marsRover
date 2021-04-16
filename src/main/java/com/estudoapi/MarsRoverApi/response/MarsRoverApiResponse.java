@@ -11,6 +11,5 @@ import java.util.List;
 @Getter @Setter
 public class MarsRoverApiResponse {
     List<MarsPhoto> photos = new ArrayList<>();
-
 }
 
