@@ -18,10 +18,10 @@ public class HomeController {
     private MarsRoverApiService roverService;
 
     @GetMapping("/")
-    public String getHomeView(ModelMap model, HomeDto homeDto) throws InvocationTargetException, IllegalAccessException {
+    public String getHomeView(ModelMap model, HomeDto homeDto) throws InvocationTargetException, IllegalAccessException, IllegalArgumentException {
         //if request param is empty, then set a default value
         if (StringUtils.isEmpty(homeDto.getMarsApiRoverData())){
-            homeDto.setMarsApiRoverData("Oportunity");
+            homeDto.setMarsApiRoverData("Opportunity");
         }
         if (homeDto.getMarsSol() == null){
             homeDto.setMarsSol(1);
@@ -29,7 +29,7 @@ public class HomeController {
         MarsRoverApiResponse roverData = roverService.getRoverData(homeDto);
         model.put("roverData", roverData);
         model.put("homeDto", homeDto);
-        model.put("validCameras", roverService.getValidCameras());
+        model.put("validCameras", roverService.getValidCameras().get(homeDto.getMarsApiRoverData()));
 
         return "index";
     }
