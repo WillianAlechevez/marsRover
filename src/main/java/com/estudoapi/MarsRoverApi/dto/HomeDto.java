@@ -16,5 +16,5 @@ public class HomeDto {
     private Boolean cameraNavcam;
     private Boolean cameraPancam;
     private Boolean cameraMinites;
-
+    private Boolean rememberPreferences;
 }
