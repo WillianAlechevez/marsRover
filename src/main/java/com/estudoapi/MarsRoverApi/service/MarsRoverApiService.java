@@ -1,8 +1,10 @@
 package com.estudoapi.MarsRoverApi.service;
 
 import com.estudoapi.MarsRoverApi.dto.HomeDto;
+import com.estudoapi.MarsRoverApi.repository.PreferencesRepository;
 import com.estudoapi.MarsRoverApi.response.MarsPhoto;
 import com.estudoapi.MarsRoverApi.response.MarsRoverApiResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import java.lang.reflect.InvocationTargetException;
@@ -13,6 +15,9 @@ import java.util.*;
 public class MarsRoverApiService {
 
     private Map<String, List<String>> validCameras = new HashMap<>();
+
+    @Autowired
+    private PreferencesRepository preferencesRepo;
 
     public MarsRoverApiService(){
         validCameras.put("Opportunity", Arrays.asList("FHAZ", "RHAZ", "NAVCAM", "PANCAM", "MINITES"));
@@ -57,5 +62,13 @@ public class MarsRoverApiService {
     }
     public Map<String, List<String>> getValidCameras() {
         return validCameras;
+    }
+
+    public HomeDto save(HomeDto homeDto) {
+        return preferencesRepo.save(homeDto);
+    }
+
+    public HomeDto finfByUserId(Long userId) {
+        return preferencesRepo.findByUserId(userId);
     }
 }
