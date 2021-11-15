@@ -19,7 +19,7 @@ podendo escolher entre as diversas câmeras disponíveis.
 ## Front end
 - HTML
 - JS
-- Boostrap 4
+- Bootstrap 4
 
 # Como executar o projeto
 
