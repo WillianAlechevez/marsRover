@@ -3,7 +3,13 @@ if (userId == null || userId == ''){
     userId = localStorage.getItem('userId')
     if (userId == null || userId == '') {
         document.getElementById('createUser').value = true
-    }
+    } 
+    //else {
+        // fetch('/savedPreferences?userId='+userId)
+        // .then(response => response.json())
+        // .then(jsonResponse => console.log(jsonResponse))
+        //window.location.href = '/?userId='+userId
+    //}
 }
 
 if (userId == null || userId == ''){
@@ -19,7 +25,7 @@ marsApiButtons.forEach(button => button.addEventListener('click', function(){
                                     let apiData = document.getElementById('marsApiRoverData')
                                     apiData.value = roverId
                                     document.getElementById('frmRoverType').submit()
-                                 }))
+                                }))
 
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
