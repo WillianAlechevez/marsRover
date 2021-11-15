@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MarsRoverApiApplication<MarsRoverApi>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.estudoapi.MarsRoverApi.MarsRoverApiApplication",
+            "projectName": "MarsRoverApi",
+            "args": ""
+        }
+    ]
+}
